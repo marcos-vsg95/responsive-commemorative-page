@@ -85,11 +85,11 @@
     </header>
 
     <main>
-        <section id="hero"
-            class="relative h-screen bg-[url('./assets/img/hero/hero-background.jpg')] bg-cover bg-center shadow-xl">
-            <div
-                class="absolute inset-0 bg-[url('./assets/img/hero/hero-foto-fade.png')] bg-cover bg-center bg-no-repeat md:bg-contain">
-            </div>
+        <section id="hero" class="relative h-screen overflow-hidden shadow-xl">
+            <img src="./assets/img/hero/hero-background.jpg" alt="" class="absolute inset-0 h-full w-full object-cover">
+            <img src="./assets/img/hero/hero-foto-fade.png" alt=""
+                class="absolute inset-0 h-full w-full object-cover md:object-contain">
+
             <div class="absolute inset-0 bg-wine-dark/90"></div>
             <div class="relative z-10 h-full flex flex-col items-center justify-center">
                 <h1 class="text-paper text-6xl font-title font-semibold mb-20">Nossa História</h1>
