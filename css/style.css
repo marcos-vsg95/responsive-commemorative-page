@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FFF8FA;
+  --color-surface: #FFFFFF;
+  --color-paper: #FFF6F0;
+
+  --color-primary: #D84D74;
+  --color-primary-hover: #C23D67;
+
+  --color-wine: #7A2E45;
+  --color-wine-dark: #5B2033;
+
+  --color-content: #44242C;
+  --color-content-muted: #6E5A61;
+
+  --color-border: #F1D9E0;
+
+  --font-title: "Cormorant Garamond", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-signature: "Great Vibes", cursive;
+}
+
+@layer components {
+    .container {
+        @apply max-w-7xl mx-auto px-6 lg:px-8
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        min-height: 100vh;
+    }
+
+}

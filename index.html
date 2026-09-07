@@ -1,96 +1,267 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luanna</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/4eab4fc05e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav id="cabecalho">
-            <div class="cabecalho-texto">
-                <h1>Luanna</h1>
-                <p>Sempre e pra sempre</p>
-            </div>
-            <menu>
-                <a href="#inicio">Início</a>
-                <a href="#qualidade">Qualidades</a>
-                <a href="#fotos">Fotos</a>
-                <a href="#carta">Carta</a>
-            </menu>
-        </nav>
-    </header>
-    <main>
-        <section id="inicio">
-            <div id="inicio-texto">
-                <p>A cada dia, me sinto mais grato por ter você. Você é o significado de amor e beleza</p>
+
+<body class="bg-background font-body text-content antialiased">
+    <header id="header"
+        class="fixed top-0 z-50 w-full bg-wine-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <nav class="flex h-20 justify-between items-center container">
+            <a href="#hero" class="shrink-0">
+                <img src="/assets/logo/luanna-logo-branco.svg" alt="Luanna" width="180" class="nav-logo w-36 md:w-44">
+            </a>
+            <div class="hidden md:flex items-center gap-2 text-white">
+                <a href="#hero"
+                    class="flex gap-2 py-2 px-4 rounded-md transition-colors text-sm hover:bg-primary-hover/30 hover:text-primary">
+                    <i data-lucide="house" class="h-4 w-4"></i>
+                    <span>Início</span>
+                </a>
+
+                <a href="#qualities"
+                    class="flex gap-2 py-2 px-4 rounded-md transition-colors text-sm hover:bg-primary-hover/30 hover:text-primary">
+                    <i data-lucide="heart" class="h-4 w-4"></i>
+                    <span>Qualidades</span>
+                </a>
+
+                <a href="#gallery"
+                    class="flex gap-2 py-2 px-4 rounded-md transition-colors text-sm hover:bg-primary-hover/30 hover:text-primary">
+                    <i data-lucide="camera" class="h-4 w-4"></i>
+                    <span>Galeria</span>
+                </a>
+
+                <a href="#letter"
+                    class="flex gap-2 py-2 px-4 rounded-md transition-colors text-sm hover:bg-primary-hover/30 hover:text-primary">
+                    <i data-lucide="mail" class="h-4 w-4"></i>
+                    <span>Carta</span>
+                </a>
             </div>
 
-            <div id="inicio-imagem"></div>
-        </section>
-        
-        <section id="qualidade">
-            <h2><i class="fa-solid fa-heart"></i> Qualidades</h2>
-            <div id="qualidade-conteiner">
-                <ul>
-                    <li>Alegre</li>
-                    <li>Amorosa</li>
-                    <li>Atenciosa</li>
-                    <li>Bondosa</li>
-                    <li>Carismatica</li>
-                    <li>Companheira</li>
-                    <li>Criativa</li>
-                    <li>Divertida</li>
-                    <li>Empatica</li>
-                    <li>Engraçada</li>
-                    <li>Fofa</li>
-                    <li>Gentil</li>
-                    <li>Leal</li>
-                </ul>
-            </div> 
-        </section>
-        <section id="fotos">
-            <h2><i class="fa-solid fa-camera"></i> Um Pouco de Nós</h2>
-            <div id="conteiner">
-                <div class="conteiner-foto">
-                    <img src="imagens/foto01.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto02.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto03.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto04.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto05.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto06.jpg" alt="">
-                </div>
-                <div class="conteiner-foto">
-                    <img src="imagens/foto07.jpg" alt="">
+            <button id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false"
+                class="flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 md:hidden">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden border-t border-white/10 bg-wine-dark/95 backdrop-blur-md md:hidden">
+            <div class="container flex flex-col py-3">
+                <a href="#hero"
+                    class="mobile-menu-link flex items-center gap-3 rounded-md px-4 py-3 text-white transition-colors hover:bg-white/10">
+                    <i data-lucide="house" class="h-5 w-5"></i>
+                    <span>Início</span>
+                </a>
+
+                <a href="#qualities"
+                    class="mobile-menu-link flex items-center gap-3 rounded-md px-4 py-3 text-white transition-colors hover:bg-white/10">
+                    <i data-lucide="heart" class="h-5 w-5"></i>
+                    <span>Qualidades</span>
+                </a>
+
+                <a href="#gallery"
+                    class="mobile-menu-link flex items-center gap-3 rounded-md px-4 py-3 text-white transition-colors hover:bg-white/10">
+                    <i data-lucide="camera" class="h-5 w-5"></i>
+                    <span>Galeria</span>
+                </a>
+
+                <a href="#letter"
+                    class="mobile-menu-link flex items-center gap-3 rounded-md px-4 py-3 text-white transition-colors hover:bg-white/10">
+                    <i data-lucide="mail" class="h-5 w-5"></i>
+                    <span>Carta</span>
+                </a>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section id="hero"
+            class="relative h-screen bg-[url('/assets/img/hero/hero-background.jpg')] bg-cover bg-center shadow-xl">
+            <div
+                class="absolute inset-0 bg-[url('/assets/img/hero/hero-foto-fade.png')] bg-cover bg-center bg-no-repeat md:bg-contain">
+            </div>
+            <div class="absolute inset-0 bg-wine-dark/90"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center">
+                <h1 class="text-paper text-6xl font-title font-semibold mb-20">Nossa História</h1>
+                <div class="bg-wine-dark/5 backdrop-blur-md border border-border/40 rounded-xl px-8 py-5 shadow-lg">
+                    <p class="text-paper/90 text-center font-title text-xl pb-5">Estamos juntos há</p>
+                    <div class="grid grid-cols-2 gap-5 md:grid-cols-[1fr_1fr_1fr_1.5fr] min-w-0 text-center text-paper">
+                        <div class="flex flex-col items-center justify-center px-10">
+                            <p id="dias" class="flex items-center justify-center gap-1">
+                                500
+                            </p>
+                            <p>Dias</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center border-l border-paper/20">
+                            <p id="meses" class="flex items-center justify-center gap-1">
+                                500
+                            </p>
+                            <p>Meses</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center md:border-l md:border-paper/20">
+                            <p id="anos" class="flex items-center justify-center gap-1">
+                                500
+                            </p>
+                            <p>Anos</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center border-l border-paper/20">
+                            <p id="data" class="flex items-center justify-center gap-1">
+                                500
+                            </p>
+                            <p>Desde</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
         </section>
-        <section id="carta">
-            <h2><i class="fa-solid fa-envelope"></i> Cartinha</h2>
-            <p><strong>Minha Lua</strong><br><br>
-            Só tenho a agradecer você por esse ano incrível que você me proporcionou. Eu te amo muito e tenho muita sorte em te ter, e quero que saiba que você é tudo para mim. <br><br>
-            Quero que nosso próximo ano seja tão bom quanto esse foi, que nós possamos aproveitar, descansar e curtir juntos. Sei que o próximo ano nosso será cheio de realizações, momentos únicos e mágicos <br><br>
-            Saiba que eu te amo muito e sou um homem de sorte por ter uma mulher tão maravilhosa, divertida, esforçada e dedicada como você.</p>
+
+        <section id="qualities" class="container">
+            <div
+                class="flex m-8 justify-center items-center gap-2 text-center md:text-3xl text-2xl text-wine font-title font-semibold">
+                <i data-lucide="heart" class="h-5 w-5 fill-wine text-background"></i>
+                <span>Qualidades que mais amo em você!</span>
+            </div>
+
+            <div class="flex justify-center flex-wrap gap-4 m-2">
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Alegria</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Amorosa</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Atenciosa</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Bondosa</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Carismatica</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Companheira</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Criativa</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Divertida</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Empatica</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Engraçada</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Fofa</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Gentil</p>
+                </div>
+
+                <div class="px-6 py-4 shadow-[0_0_20px_rgba(59,130,246,0.5)] rounded-lg">
+                    <p>Leal</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="container">
+            <div
+                class="flex mt-20 m-8 justify-center items-center gap-2 text-center md:text-3xl text-2xl text-wine font-title font-semibold">
+                <i data-lucide="camera" class="h-5 w-5 fill-wine text-background"></i>
+                <span>Um pouco de nós!</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <div class="group md:col-span-2 md:row-span-2">
+                    <img src="./assets/img/gallery/foto08.jpg" alt="Momento especial"
+                        class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto01.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto02.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto03.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto04.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto05.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto06.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+                <div class="group">
+                    <img src="./assets/img/gallery/foto07.jpg" alt="Momento especial"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                </div>
+            </div>
+        </section>
+
+        <section id="letter" class="container">
+            <div
+                class="flex mt-20 m-8 justify-center items-center gap-2 text-center md:text-3xl text-2xl text-wine font-title font-semibold">
+                <i data-lucide="mail" class="h-5 w-5 text-wine"></i>
+                <span>Cartinha!</span>
+            </div>
+
+            <div class="bg-primary/10 shadow-lg rounded-md md:p-6 md:px-20 md:mx-10 p-2 px-10 mx-5 mb-20">
+                <h2 class="text-primary md:text-xl text-lg mb-2">Minha Lua</h2>
+                <p>Só tenho a agradecer você por esse ano incrível que você me proporcionou. Eu te amo muito e tenho
+                    muita sorte em te ter, e quero que saiba que você é tudo para mim.</p><br>
+                <p>Quero que nosso próximo ano seja tão bom quanto esse foi, que nós possamos aproveitar, descansar e
+                    curtir juntos. Sei que o próximo ano nosso será cheio de realizações, momentos únicos e mágicos</p>
+                <br>
+                <p>Saiba que eu te amo muito e sou um homem de sorte por ter uma mulher tão maravilhosa, divertida,
+                    esforçada e dedicada como você.</p>
+            </div>
         </section>
 
     </main>
+
     <footer>
-        <p>Feito com amor<br>
-        de Marcos Vinícius</p>
+        <div class="flex justify-center items-center bg-wine-dark w-full h-20 text-center">
+            <p class="text-white font-title font-semibold text-xl">Feito com amor de Marcos Vinícius</p>
+        </div>
     </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/js/icons.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/time.js"></script>
 </body>
+
 </html>
